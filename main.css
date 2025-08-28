@@ -1,0 +1,165 @@
+/* General frustrating styles */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    animation: background-flicker 10s infinite;
+    /* A subtle, annoying animation */
+    padding-top: 60px;
+    /* Space for the navigation bar */
+}
+
+@keyframes background-flicker {
+    0% {
+        background-color: #f0f0f0;
+    }
+
+    50% {
+        background-color: #e6e6e6;
+    }
+
+    100% {
+        background-color: #f0f0f0;
+    }
+}
+
+/* Frustrating navigation bar */
+.frustrating-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #555;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.5s ease-in-out;
+}
+
+.frustrating-nav:hover {
+    transform: translateY(-5px);
+    /* Jitter on hover */
+    background-color: #ff6347;
+    /* Inconsistent color change */
+}
+
+.nav-item {
+    margin: 10px;
+    padding: 10px 20px;
+    border: 2px dashed #999;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-item:nth-child(2n) {
+    transform: rotate(2deg);
+    /* Misaligned elements */
+    transition-delay: 0.1s;
+    /* Delayed hover effect */
+}
+
+.nav-item:hover {
+    box-shadow: 5px 5px 0 #000;
+    /* Another inconsistent hover effect */
+    background-color: #e9e9e9;
+    transition: all 0.1s linear;
+    /* Change of animation style */
+}
+
+.nav-item.hidden-menu {
+    visibility: hidden;
+    /* Violates visibility principle */
+}
+
+/* Home page button styles */
+.frustrating-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.frustrating-btn:hover {
+    background-color: #FF5722;
+    /* Inconsistent color change on hover */
+    transform: scale(1.1);
+}
+
+/* Frustrating text and layout */
+.content-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.page-title {
+    color: #ff0000;
+    /* Poor contrast and jarring color */
+    font-family: 'Comic Sans MS', cursive;
+    /* A professionally inappropriate font */
+}
+
+/* Frustrating mobile responsiveness */
+@media (max-width: 768px) {
+    .frustrating-nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        flex-basis: 50%;
+    }
+
+    body {
+        font-size: 1.2em;
+        /* Text size unexpectedly increases */
+        padding-top: 120px;
+    }
+
+    .content-container {
+        overflow-x: scroll;
+        /* Elements overflow, forcing horizontal scroll */
+    }
+}
+
+/* Prototype page-specific styles */
+.prototype-container {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.frustrating-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    /* Inconsistent sizing and spacing */
+    box-sizing: border-box;
+}
+
+.frustrating-input:focus {
+    outline: none;
+    border-color: #ff0000;
+    /* Jarring color on focus */
+}
+
+/* Make buttons move on hover */
+#submit-btn:hover {
+    transform: translateX(10px);
+    /* Moves button on hover, making it hard to click */
+}

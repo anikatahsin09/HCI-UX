@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse UX: Home</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <nav class="frustrating-nav">
+        <div class="nav-item home-btn active" aria-label="Home page link that's not really a link">
+            <a href="index.html" class="not-a-link">Home</a>
+        </div>
+        <div class="nav-item about-btn" aria-label="About page button">
+            <a href="pages/about.html" class="clickable-but-delayed">About</a>
+        </div>
+        <div class="nav-item prototype-btn hidden-menu" aria-label="Prototype demo link">
+            <a href="pages/prototype.html">Prototype</a>
+        </div>
+        <div class="nav-item survey-btn" aria-label="Survey page">
+            <a href="pages/survey.html">Survey</a>
+        </div>
+        <div class="nav-item contact-btn" aria-label="Contact information">
+            <a href="pages/contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <article>
+            <h1 class="page-title">Reverse UX: Purposefully Frustrating Interfaces</h1>
+            <p>Welcome to our research prototype. This project explores the fascinating world of **human-computer interaction** by doing the opposite of what's expected. We've designed an interface that is deliberately confusing, inconsistent, and difficult to use. Our goal is to observe how you, the user, navigate and recover from these purposeful frustrations. Please continue to the prototype to begin the experience.</p>
+        </article>
+        <div class="action-section">
+            <button id="start-btn" class="frustrating-btn">Start Experiment</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HCI Research Group</p>
+    </footer>
+
+</body>
+</html>
