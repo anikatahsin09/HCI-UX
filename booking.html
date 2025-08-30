@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EasyTravel - Book Flights, Hotels, and Cars</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="nav-container">
+                <a href="index.html" class="logo">✈️ EasyTravel</a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="dashboard-tab"
+                            data-tab="flights">Flights</a></li>
+                    <li><a href="#" class="dashboard-tab"
+                            data-tab="hotels">Hotels</a></li>
+                    <li><a href="#" class="dashboard-tab"
+                            data-tab="cars">Cars</a></li>
+                    <li><a href="#" class="dashboard-tab"
+                            data-tab="support">Support</a></li>
+                    <li><a href="#" id="nav-login">Login/Sign Up</a></li>
+                </ul>
+                <button class="accessibility-toggle"
+                    id="accessibility-toggle">Toggle High Contrast</button>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="dashboard-nav">
+                <button class="dashboard-tab active"
+                    data-tab="flights">Flights</button>
+                <button class="dashboard-tab" data-tab="hotels">Hotels</button>
+                <button class="dashboard-tab" data-tab="cars">Cars</button>
+                <button class="dashboard-tab"
+                    data-tab="support">Support</button>
+            </div>
+
+            <div class="dashboard-container">
+                <div id="flights-dashboard" class="dashboard-content active">
+                    <div class="booking-container">
+                        <h1 class="booking-title">Find Your Perfect Flight</h1>
+                        <p class="booking-subtitle">Search thousands of flights
+                            to get the best deals</p>
+                        <form id="booking-form">
+                            <div class="form-group">
+                                <label class="form-label"
+                                    for="from">From</label>
+                                <input type="text" id="from" class="form-input"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="to">To</label>
+                                <input type="text" id="to" class="form-input"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"
+                                    for="departure-date">Departure Date</label>
+                                <input type="date" id="departure-date"
+                                    class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"
+                                    for="passengers">Passengers</label>
+                                <select id="passengers" class="form-input">
+                                    <option>1 Passenger</option>
+                                    <option>2 Passengers</option>
+                                    <option>3 Passengers</option>
+                                    <option>4 Passengers</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="search-button">Search
+                                Flights</button>
+                        </form>
+                        <div id="flights-results-container"
+                            class="results-container"
+                            style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div id="cars-dashboard" class="dashboard-content">
+                    <div class="booking-container">
+                        <h1 class="booking-title">Rent Your Perfect Car</h1>
+                        <p class="booking-subtitle">Find the best rental cars
+                            for your trip</p>
+                        <form id="car-booking-form">
+                            <div class="form-group">
+                                <label class="form-label"
+                                    for="pickup-location">Pickup
+                                    Location</label>
+                                <input type="text" id="pickup-location"
+                                    class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"
+                                    for="dropoff-location">Drop-off
+                                    Location</label>
+                                <input type="text" id="dropoff-location"
+                                    class="form-input" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="pickup-date">Pickup Date</label>
+                                    <input type="date" id="pickup-date"
+                                        class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="pickup-time">Pickup Time</label>
+                                    <input type="time" id="pickup-time"
+                                        class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="dropoff-date">Drop-off Date</label>
+                                    <input type="date" id="dropoff-date"
+                                        class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="dropoff-time">Drop-off Time</label>
+                                    <input type="time" id="dropoff-time"
+                                        class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="car-type">Car
+                                    Type</label>
+                                <select id="car-type" class="form-input">
+                                    <option>Any Type</option>
+                                    <option>Economy</option>
+                                    <option>Compact</option>
+                                    <option>Midsize</option>
+                                    <option>Full Size</option>
+                                    <option>SUV</option>
+                                    <option>Luxury</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="search-button">Search
+                                Cars</button>
+                        </form>
+                        <div id="cars-results-container"
+                            class="results-container"
+                            style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div id="hotels-dashboard" class="dashboard-content">
+                    <div class="booking-container">
+                        <h1 class="booking-title">Find Your Perfect Stay</h1>
+                        <p class="booking-subtitle">Discover amazing hotels for
+                            your trip</p>
+                        <form id="hotel-booking-form">
+                            <div class="form-group">
+                                <label class="form-label"
+                                    for="destination">Destination</label>
+                                <input type="text" id="destination"
+                                    class="form-input" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="checkin-date">Check-in Date</label>
+                                    <input type="date" id="checkin-date"
+                                        class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="checkout-date">Check-out
+                                        Date</label>
+                                    <input type="date" id="checkout-date"
+                                        class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="rooms">Rooms</label>
+                                    <select id="rooms" class="form-input">
+                                        <option>1 Room</option>
+                                        <option>2 Rooms</option>
+                                        <option>3 Rooms</option>
+                                        <option>4 Rooms</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"
+                                        for="guests">Guests</label>
+                                    <select id="guests" class="form-input">
+                                        <option>1 Guest</option>
+                                        <option>2 Guests</option>
+                                        <option>3 Guests</option>
+                                        <option>4 Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="search-button">Search
+                                Hotels</button>
+                        </form>
+                        <div id="hotels-results-container"
+                            class="results-container"
+                            style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div id="support-dashboard" class="dashboard-content">
+                    <div class="booking-container">
+                        <h1 class="booking-title">Need Help?</h1>
+                        <p class="booking-subtitle">Our support team is here to
+                            assist you.</p>
+                        <div id="support-history" class="support-history"></div>
+                        <form id="support-form" class="support-form">
+                            <textarea id="support-message"
+                                class="form-input support-input"
+                                placeholder="Type your message here..."
+                                required></textarea>
+                            <button type="submit" class="search-button">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="notification" class="notification">
+            <p id="notification-text"></p>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <button id="modal-close" class="modal-close">&times;</button>
+                <h2 id="modal-title"></h2>
+                <p id="modal-message"></p>
+                <button id="modal-ok" class="search-button">OK</button>
+            </div>
+        </div>
+
+        <div id="onboarding-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Welcome to the HCI Study</h2>
+                <p>This interface is designed to be challenging—please proceed
+                    as normal. Your interactions will be logged for
+                    analysis.</p>
+                <button id="onboarding-close"
+                    class="search-button">Start</button>
+            </div>
+        </div>
+
+        <div id="debrief-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Debrief Questionnaire</h2>
+                <p>Please rate the following on a scale of 1 (low) to 20
+                    (high):</p>
+                <form id="debrief-form" class="debrief-form">
+                    <div class="form-group">
+                        <label for="mental-demand">Mental Demand</label>
+                        <input type="range" id="mental-demand" min="1" max="20"
+                            value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="physical-demand">Physical Demand</label>
+                        <input type="range" id="physical-demand" min="1"
+                            max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="temporal-demand">Temporal Demand</label>
+                        <input type="range" id="temporal-demand" min="1"
+                            max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="performance">Performance</label>
+                        <input type="range" id="performance" min="1" max="20"
+                            value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="effort">Effort</label>
+                        <input type="range" id="effort" min="1" max="20"
+                            value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="frustration">Frustration</label>
+                        <input type="range" id="frustration" min="1" max="20"
+                            value="10">
+                    </div>
+                    <button type="submit" class="search-button">Submit and
+                        Download Logs</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="auth-modal">
+            <div class="modal-content">
+                <button class="modal-close"
+                    id="auth-modal-close">&times;</button>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <img
+                        src="https://placehold.co/100x100/667eea/ffffff?text=Travel"
+                        alt="Travel Icon" style="border-radius: 50%;">
+                </div>
+                <h2 id="auth-modal-title">Log In</h2>
+                <form id="auth-form">
+                    <div class="form-group">
+                        <label class="form-label" for="auth-email">Email</label>
+                        <input type="email" id="auth-email" class="form-input"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"
+                            for="auth-password">Password</label>
+                        <input type="password" id="auth-password"
+                            class="form-input" required>
+                    </div>
+                    <button type="submit" class="search-button"
+                        id="auth-button">Log In</button>
+                </form>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    Don't have an account? <a href="#"
+                        id="toggle-auth-mode">Sign Up</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="modal" id="discount-modal">
+            <div class="modal-content" style="text-align: center;">
+                <h2
+                    style="font-size: 2rem; color: #ff6b6b; margin-bottom: 0.5rem;">🎉
+                    Flash Sale! 🎉</h2>
+                <p style="font-size: 1.2rem; color: #555;">Get <strong
+                        style="color: #ff6b6b;">20% OFF</strong> all bookings
+                    today!</p>
+                <p
+                    style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">Use
+                    code: TRAVEL20</p>
+                <button class="search-button" id="discount-modal-close"
+                    style="margin-top: 1.5rem;">Awesome!</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; 2025 EasyTravel. All rights reserved.</p>
+                <a href="index.html" class="footer-nav-button"
+                    id="footer-nav">Go to Dashboard</a>
+            </div>
+        </footer>
+
+        <script src="main.js"></script>
+    </body>
+</html>
